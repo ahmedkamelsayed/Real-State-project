@@ -1,0 +1,226 @@
+﻿
+@model IEnumerable<Real_State_project.Models.projects>
+@using Real_State_project.Security;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Real Estate Home</title>
+    <link rel="stylesheet" href="~/content/bootstrap.css">
+    <link rel="stylesheet" href="~/content/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/fonts/icomoon/styleicons.css">
+    <link rel="stylesheet" href="~/content/home/bootstrap.min.css">
+    <link rel="stylesheet" href="~/content/home/magnific-popup.css">
+    <link rel="stylesheet" href="~/content/home/jquery-ui.css">
+    <link rel="stylesheet" href="~/content/home/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/content/home/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/content/home/style.css">
+
+    <link rel="stylesheet" href="~/content/home_style.css">
+    <link rel="icon" href="~/img/house.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+    <style>
+        .table-striped p a,
+        .table-striped p a:hover,
+        .form-horizontal p a,
+        .form-horizontal p a:hover {
+            text-decoration: none;
+            color: #fff
+        }
+
+            .form-horizontal p a:hover {
+                cursor: no-drop;
+            }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- start header -->
+    <div class="header">
+        <div class="slider">
+            <div style=" color: #fff;">
+                welcome  @sessionPersiter.Username
+                <br />
+                <a href="@Url.Action("Logout","Account")">Logout</a>
+            </div>
+            <div class="intro text-center">
+                <h2>Home</h2>
+            </div>
+        </div>
+
+        <!-- start navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#axit-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand uppercase" href="#">Real<span> Estate</span> Home</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="axit-nav">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a onclick="Openlogin()">LOGIN</a></li>
+                        <li><a onclick="Openregister()">REGISTER</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!-- end navbar -->
+    </div>
+    <!-- end header -->
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div style="margin-top: -100px;" class="site-section site-section-sm">
+            <div class="container">
+                <div class="row">
+
+
+
+
+
+                    <div class="col-lg-offset-1 col-lg-10">
+                        <div>
+                            <div class="slide-one-item home-slider owl-carousel">
+                                <div><img src="~/img/hero_bg_1.jpg" alt="Image" class="img-fluid"></div>
+                                <div><img src="~/img/hero_bg_2.jpg" alt="Image" class="img-fluid"></div>
+                                <div><img src="~/img/hero_bg_3.jpg" alt="Image" class="img-fluid"></div>
+                            </div>
+                        </div>
+                        <div class="bg-white property-body border-bottom border-left border-right">
+                            <div class="row mb-5">
+                                <div class="col-md-6">
+                                    <strong class="text-success h1 mb-3">$1,000,500</strong>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
+                                        <li>
+                                            <span class="property-specs">Beds</span>
+                                            <span class="property-specs-number">2 <sup>+</sup></span>
+
+                                        </li>
+                                        <li>
+                                            <span class="property-specs">Baths</span>
+                                            <span class="property-specs-number">2</span>
+
+                                        </li>
+                                        <li>
+                                            <span class="property-specs">SQ FT</span>
+                                            <span class="property-specs-number">7,000</span>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                                    <span class="d-inline-block text-black mb-0 caption-text">Home Type</span>
+                                    <strong class="d-block">Condo</strong>
+                                </div>
+                                <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                                    <span class="d-inline-block text-black mb-0 caption-text">Year Built</span>
+                                    <strong class="d-block">2018</strong>
+                                </div>
+                                <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                                    <span class="d-inline-block text-black mb-0 caption-text">Price/Sqft</span>
+                                    <strong class="d-block">$520</strong>
+                                </div>
+                            </div>
+
+                            <h2>All Current not assigned projects:</h2>
+                            <br />
+                            <table class="table table-striped ">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Title
+                                        </th>
+                                        <th>
+                                            Describtion
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in ViewBag.projects)
+                                    {
+                                        if ((item.statusid == 1) && (!(item.progressstatus == 2)))
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @item.titel
+                                                </td>
+                                                <td>
+                                                    @item.description
+                                                </td>
+                                                <td>
+                                                    <p class="add btn btn-primary btn-md">@Html.ActionLink("manage", "manage", new { @id = @item.id })</p>
+                                                </td>
+
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <!-- start footer -->
+    <div class="footer text-center">
+        <div class="container">
+            <i class="fa fa-facebook fa-2x fa-fw"></i>
+            <i class="fa fa-twitter fa-2x fa-fw"></i>
+            <i class="fa fa-google-plus fa-2x fa-fw"></i>
+            <i class="fa fa-pinterest fa-2x fa-fw"></i>
+            <i class="fa fa-instagram fa-2x fa-fw"></i>
+            <i class="fa fa-stumbleupon fa-2x fa-fw"></i>
+            <i class="fa fa-rss fa-2x fa-fw"></i>
+
+            <p>&copy; 2019 IA Team</p>
+        </div>
+    </div>
+    <!-- end footer -->
+
+
+
+
+    <script src="~/Scripts/home/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/home/owl.carousel.min.js"></script>
+    <script src="~/Scripts/home/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/home/aos.js"></script>
+    <script src="~/Scripts/home/main.js"></script>
+
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+

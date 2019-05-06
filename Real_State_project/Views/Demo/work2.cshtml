@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+@using Real_State_project.Security;
+<!DOCTYPE html>
+<a href="~/ProjectManagers/listInformation">~/Views/ProjectManagers/listInformation.cshtml</a>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>work2</title>
+</head>
+<body>
+    <div>
+        work2
+        <br />
+        welcome  @sessionPersiter.Username
+        <br />
+        <a href="@Url.Action("Logout","Account")">Logout</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* start glopal roles*/  
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* start heaer */
+.header .slider
+{
+    background-image: url(../img/header.jpg);
+    background-size:cover;
+    height: 400px;
+}
+.header .slider .intro 
+{
+    padding-top: 150px;
+    color: #fff;
+}
+.header .slider .intro h2
+{
+    margin: 0 auto;
+    font-size: 40px;
+    width: 350px;
+    border-top: 4px solid #FFF;
+    border-bottom: 4px solid #FFF;
+    padding: 10px 0;
+    font-weight: bold;
+}
+/* start navbar */
+.navbar-inverse
+{
+    background-color: transparent;
+    padding: 8px;
+    border: none;
+    top: -85px;
+    position: relative;
+}
+.navbar-inverse .navbar-brand
+{
+    font-weight: bold;
+    font-size: 25px;
+    color: #fff
+}
+.navbar-inverse .navbar-brand span
+{
+    color: #ff8b38
+}
+.navbar-inverse .navbar-nav > li > a
+{
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 13px;
+    cursor: pointer;
+}
+.navbar-inverse .navbar-nav > li > a:hover
+{
+    color: #ff8b38;
+}
+.scrolled /* class was added when user scro;; the page */
+{
+    background-color: rgba(0,0,0,0.8);
+}
+/* end navbar */
+
+
+
+
+
+/* start section footer */
+.footer
+{
+    background-color: #000;
+    color: #ccc;
+    padding: 20px;
+}
+.footer i
+{
+    color: #ccc;
+    margin: 0 10px 10px;
+}
+.footer i:hover
+{
+    color: #fff
+}
+/* end section footer */

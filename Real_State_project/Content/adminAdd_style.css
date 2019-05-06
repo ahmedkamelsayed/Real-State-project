@@ -1,0 +1,118 @@
+/* start glopal roles*/  
+body
+{
+    font-family: 'Open Sans', sans-serif;
+    height: 2000px
+}
+
+/* start heaer */
+.header .slider
+{
+    background-image: url(../img/header.jpg);
+    background-size:cover;
+    height: 400px;
+}
+.header .slider .intro 
+{
+    padding-top: 150px;
+    color: #fff;
+}
+.header .slider .intro h2
+{
+    margin: 0 auto;
+    font-size: 40px;
+    width: 350px;
+    border-top: 4px solid #FFF;
+    border-bottom: 4px solid #FFF;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content
+{
+    height: 1500px
+}
+/* Set gray background color and 100% height */
+.sidenav 
+{
+  background-color: #f1f1f1;
+  height: 100%;
+}
+.sidenav .brand-name
+{
+    margin: 50px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+.sidenav .brand-name span
+{
+    color: #ff8b38
+}
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) 
+{
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height: auto;} 
+}
+
+/* start body of profile */
+
+.profile-pic
+{
+    width: 40%;
+    text-align: left;
+    background: #eee;
+    position: fixed;
+    top: 0;
+    left: 400px;
+    transition: 1.5s;
+    border: 2px solid #72889a;
+    border-radius: 10px;
+    z-index: 9999999;
+}
+
+.profile-pic .content
+{
+    position: relative;
+    top: 25%;
+    margin-top: 4%;
+}
+
+.profile-pic a
+{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    font-size: 30px;
+    margin-bottom: 2%;
+}
+
+.projects
+{
+    margin-top: 100px;
+}
+/* end body of profile */
+
+/* start section footer */
+.footer
+{
+    background-color: #000;
+    color: #ccc;
+    padding: 20px;
+}
+.footer i
+{
+    color: #ccc;
+    margin: 0 10px 10px;
+}
+.footer i:hover
+{
+    color: #fff
+}
+/* end section footer */

@@ -1,0 +1,168 @@
+﻿@model IEnumerable<Real_State_project.Models.users>
+@using Real_State_project.Security;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Real Estate Home</title>
+    <link rel="stylesheet" href="~/content/bootstrap.css">
+    <link rel="stylesheet" href="~/content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/content/adminAdd_style.css">
+    <link rel="icon" href="~/img/house.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+
+
+    <style>
+        .aaa a,
+        .aaa a:hover {
+            text-decoration: none;
+            color: #fff
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+    <!-- start header -->
+    <div class="header">
+        <div class="slider">
+            <div style=" color: #fff;">
+                welcome  @sessionPersiter.Username
+                <br />
+                <a href="@Url.Action("Logout","Account")">Logout</a>
+            </div>
+            <div class="intro text-center">
+                <h2>Admin, PM and TL</h2>
+            </div>
+        </div>
+
+    </div>
+    <!-- end header -->
+    <!--- start admin profile -->
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <h4 class="brand-name">Real <span>Estate</span> Home</h4>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/admin/AddUser">Add User</a></li>
+                    <li><a href="/admin/listCT">Customer</a></li>
+                    <li><a href="/admin/listPM">Project Manager</a></li>
+                    <li><a href="/admin/listTL">Team Leader</a></li>
+                    <li class="active"><a href="/admin/listJE">Junior Engineer</a></li>
+                    <li><a href="/admin/listProjects">List Projects</a></li>
+                </ul><br>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Blog..">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-9">
+                <div class="container-fluid">
+
+
+                    <div class="row">
+                        <div class="projects">
+                            <div class="col-sm-12">
+                                <br>
+                                <table class="table table-striped ">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.email)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.firstname)
+                                            </th>
+
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.phone)
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            if (item.usertypeId == 4 || item.usertypeId == 3)
+                                            {
+
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.email)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.firstname)
+                                                    </td>
+
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.phone)
+                                                    </td>
+
+                                                    <td>
+                                                        <button class="add btn btn-success btn-md aaa">@Html.ActionLink("Request", "request", new { @user_id = @item.Id, @pro_id = @ViewBag.proid })</button>
+
+                                                    </td>
+
+                                                </tr>
+                                            }
+
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--- end admin profile -->
+    <!-- start footer -->
+    <div class="footer text-center">
+        <div class="container">
+            <i class="fa fa-facebook fa-2x fa-fw"></i>
+            <i class="fa fa-twitter fa-2x fa-fw"></i>
+            <i class="fa fa-google-plus fa-2x fa-fw"></i>
+            <i class="fa fa-pinterest fa-2x fa-fw"></i>
+            <i class="fa fa-instagram fa-2x fa-fw"></i>
+            <i class="fa fa-stumbleupon fa-2x fa-fw"></i>
+            <i class="fa fa-rss fa-2x fa-fw"></i>
+
+            <p>&copy; 2019 IA Team</p>
+        </div>
+    </div>
+    <!-- end footer -->
+
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<

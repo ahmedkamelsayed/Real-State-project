@@ -1,0 +1,229 @@
+﻿@model Real_State_project.Models.users
+@using Real_State_project.Security;
+
+@{
+    ViewBag.Title = "AddUser";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Real Estate Home</title>
+    <link rel="stylesheet" href="~/content/bootstrap.css">
+    <link rel="stylesheet" href="~/content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/content/adminAdd_style.css">
+    <link rel="icon" href="~/img/house.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+
+
+    <style>
+        .modal-footer a,
+        .modal-footer a:hover {
+            text-decoration: none;
+            color: #fff
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+    <!-- start header -->
+    <div class="header">
+        <div class="slider">
+            <div style=" color: #fff;">
+                welcome  @sessionPersiter.Username
+                <br />
+                <a href="@Url.Action("Logout","Account")">Logout</a>
+            </div>
+            <div class="intro text-center">
+                <h2>Admin, PM and TL</h2>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- end header -->
+    <!--- start admin profile -->
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <h4 class="brand-name">Real <span>Estate</span> Home</h4>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="/admin/listInformation">Home</a></li>
+                    <li class="active"><a href="/admin/AddUser">Add User</a></li>
+                    <li><a href="/admin/listCT">Customer</a></li>
+                    <li><a href="/admin/listPM">Project Manager</a></li>
+                    <li><a href="/admin/listTL">Team Leader</a></li>
+                    <li><a href="/admin/listJE">Junior Engineer</a></li>
+                    <li><a href="/admin/listProjects">List Projects</a></li>
+                </ul><br>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Blog..">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-9">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div>
+                            <div class="col-sm-12">
+
+                                @using (Html.BeginForm("AddUser", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    <form id="editMember" class="content">
+                                        <input type="hidden" id="Member_id_edit" name="Member_id_edit">
+                                        <h2>Edit Member</h2>
+                                        <div class="modal-body">
+
+
+                                            <div class="form-horizontal">
+
+                                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <label>Email</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-envelope"></i>
+                                                            </span>
+                                                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <label>First Name</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-user"></i>
+                                                            </span>
+                                                            @Html.EditorFor(model => model.firstname, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <label>Last Name</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-user"></i>
+                                                            </span>
+                                                            @Html.EditorFor(model => model.lastname, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.lastname, "", new { @class = "text-danger" })
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <label>Phone</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-envelope"></i>
+                                                            </span>
+                                                            @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <label>photo</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-envelope"></i>
+                                                            </span>
+                                                            <input type="file" name="photo" id="img" class="text-danger" required />
+                                                            @Html.ValidationMessageFor(model => model.photo, "", new { @class = "text-danger" })
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <label>jop description</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-envelope"></i>
+                                                            </span>
+                                                            @Html.EditorFor(model => model.jobDescription, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.jobDescription, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <h5>1 = Customer // 2 = ProjectManager // 3 = TeamLeader // 4 = Junior Engineer</h5>
+                                                        <label>usertypeId</label>
+                                                        <div class="input-group">
+                                                            @Html.EditorFor(model => model.usertypeId, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.usertypeId, "", new { @class = "text-danger" })
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-offset-2 col-md-10">
+                                                        <div class="modal-footer">
+                                                            <input type="submit" value="Add User" class="btn green btn-info" />
+                                                            <p class="add btn btn-primary btn-md">@Html.ActionLink("back to list", "list")</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--- end admin profile -->
+    <!-- start footer -->
+    <div class="footer text-center">
+        <div class="container">
+            <i class="fa fa-facebook fa-2x fa-fw"></i>
+            <i class="fa fa-twitter fa-2x fa-fw"></i>
+            <i class="fa fa-google-plus fa-2x fa-fw"></i>
+            <i class="fa fa-pinterest fa-2x fa-fw"></i>
+            <i class="fa fa-instagram fa-2x fa-fw"></i>
+            <i class="fa fa-stumbleupon fa-2x fa-fw"></i>
+            <i class="fa fa-rss fa-2x fa-fw"></i>
+
+            <p>&copy; 2019 IA Team</p>
+        </div>
+    </div>
+    <!-- end footer -->
+
+
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body>
+</html>

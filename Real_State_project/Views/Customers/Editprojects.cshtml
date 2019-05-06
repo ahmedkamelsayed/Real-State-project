@@ -1,0 +1,174 @@
+﻿@model Real_State_project.Models.projects
+@using Real_State_project.Security;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Real Estate Home</title>
+    <link rel="stylesheet" href="~/content/bootstrap.css">
+    <link rel="stylesheet" href="~/content/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/fonts/icomoon/styleicons.css">
+    <link rel="stylesheet" href="~/content/home/bootstrap.min.css">
+    <link rel="stylesheet" href="~/content/home/magnific-popup.css">
+    <link rel="stylesheet" href="~/content/home/jquery-ui.css">
+    <link rel="stylesheet" href="~/content/home/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/content/home/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/content/home/style.css">
+
+    <link rel="stylesheet" href="~/content/home_style.css">
+    <link rel="icon" href="~/img/house.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+
+    <style>
+        p.aaa a,
+        p.aaa:hover {
+            text-decoration: none;
+            color: #fff
+        }
+
+        nav.scrolled {
+            background-color: transparent
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- start header -->
+    <div class="header">
+        <div class="slider">
+            <div style=" color: #fff;">
+                welcome  @sessionPersiter.Username
+                <br />
+                <a href="@Url.Action("Logout","Account")">Logout</a>
+            </div>
+            <div class="intro text-center">
+                <h2>Home</h2>
+            </div>
+        </div>
+
+        <!-- start navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#axit-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand uppercase" href="#">Real<span> Estate</span> Home</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="axit-nav">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a onclick="Openlogin()">LOGIN</a></li>
+                        <li><a onclick="Openregister()">REGISTER</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!-- end navbar -->
+    </div>
+    <!-- end header -->
+
+    <div class="col-sm-9" style=" float: none; ">
+        <div class="container-fluid">
+            <div class="row">
+                <div>
+                    <div class="col-sm-12">
+
+                        @using (Html.BeginForm("Editprojects", "Customers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <form id="editMember" class="content">
+                                <input type="hidden" id="Member_id_edit" name="Member_id_edit">
+                                <h2>Edit Project</h2>
+                                <div class="modal-body">
+
+
+                                    <div class="form-horizontal">
+
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                <label>titel</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-envelope"></i>
+                                                    </span>
+                                                    @Html.EditorFor(model => model.titel, new { htmlAttributes = new { @name = "titel", @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.titel, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                <label>description</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user"></i>
+                                                    </span>
+                                                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @name = "description", @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                <div class="modal-footer">
+                                                    <input type="submit" value="save" class="btn green btn-info" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--- end admin profile -->
+    <!-- start footer -->
+    <div class="footer text-center">
+        <div class="container">
+            <i class="fa fa-facebook fa-2x fa-fw"></i>
+            <i class="fa fa-twitter fa-2x fa-fw"></i>
+            <i class="fa fa-google-plus fa-2x fa-fw"></i>
+            <i class="fa fa-pinterest fa-2x fa-fw"></i>
+            <i class="fa fa-instagram fa-2x fa-fw"></i>
+            <i class="fa fa-stumbleupon fa-2x fa-fw"></i>
+            <i class="fa fa-rss fa-2x fa-fw"></i>
+
+            <p>&copy; 2019 IA Team</p>
+        </div>
+    </div>
+    <!-- end footer -->
+
+
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body>
+</html>
+
+

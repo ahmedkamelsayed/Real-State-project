@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Real Estate Home</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="icon" href="~/img/house.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+
+</head>
+
+<body>
+
+    <!-- start navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#axit-nav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand uppercase" href="#">Real<span> Estate</span> Home</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="axit-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a onclick="Openlogin()">LOGIN</a></li>
+                    <li><a onclick="Openregister()">REGISTER</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- end navbar -->
+    <!----- strat slider------>
+    <div id="myslide" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myslide" data-slide-to="0" class="active"></li>
+            <li data-target="#myslide" data-slide-to="1"></li>
+            <li data-target="#myslide" data-slide-to="2"></li>
+            <li data-target="#myslide" data-slide-to="3"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/img/1.jpg" alt="pic 1">
+                <div class="carousel-caption hidden-sm">
+                    <h1>Programming</h1>
+                    <p>Bootstrap exclusively uses CSS3 for its animations, but Internet Explorer 8  9 don't support the necessary CSS properties. Thus, there are no slide transition animations when using these browsers. We have intentionally decided not to include jQuery-based fallbacks for the transitions.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/img/2.jpg" alt="pic 2">
+                <div class="carousel-caption hidden-sm">
+                    <h1>Programming</h1>
+                    <p>Bootstrap exclusively uses CSS3 for its animations, but Internet Explorer 8  9 don't support the necessary CSS properties. Thus, there are no slide transition animations when using these browsers. We have intentionally decided not to include jQuery-based fallbacks for the transitions.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/img/3.jpg" alt="pic 3">
+                <div class="carousel-caption hidden-sm">
+                    <h1>Programming</h1>
+                    <p>Bootstrap exclusively uses CSS3 for its animations, but Internet Explorer 8  9 don't support the necessary CSS properties. Thus, there are no slide transition animations when using these browsers. We have intentionally decided not to include jQuery-based fallbacks for the transitions.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/img/4.jpg" alt="pic 4">
+                <div class="carousel-caption hidden-sm">
+                    <h1>Programming</h1>
+                    <p>Bootstrap exclusively uses CSS3 for its animations, but Internet Explorer 8  9 don't support the necessary CSS properties. Thus, there are no slide transition animations when using these browsers. We have intentionally decided not to include jQuery-based fallbacks for the transitions.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myslide" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myslide" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!---- end slider------->
+    <!-- start login popup -->
+    <div class="overlaypopup" id="loginButton">
+        <div class="content">
+            <div class="col-md-3"></div>
+            <div class="form-popup col-md-6 col-xs-12">
+                <a href="#" class="close" onclick="Closelogin()">&times;</a>
+                <h2 class="headForm">Login</h2>
+                <div class="foorm">
+                    <form action="#" method="post">
+                        <input type="text" placeholder="User Name" required="">
+                        <span class="icon1"><i class="fa fa-user"></i></span>
+
+                        <input type="password" placeholder="Password" required="">
+                        <span class="icon3"><i class="fa fa-unlock"></i></span>
+
+                        <input type="submit" value="Login">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end login popup -->
+    <!-- start register popup -->
+    <div class="overlaypopup col-sm-4 col-xs-12" id="registerButton">
+
+        <div class="content">
+            <div class="col-md-3"></div>
+            <div class="form-popup col-md-6 col-xs-12">
+                <a href="#" class="close" onclick="Closeregister()">&times;</a>
+                <h2 class="headForm">Sign Up</h2>
+                <div class="foorm">
+                    <form action="#" method="post">
+                        <input type="text" placeholder="UserName" required="">
+                        <span class="icon1"><i class="fa fa-user"></i></span>
+
+                        <input type="number" placeholder="Phone Number" required="">
+                        <span class="icon3"><i class="fa fa-phone"></i></span>
+
+                        <input type="email" placeholder="Email" required="">
+                        <span class="icon4"><i class="fa fa-envelope"></i></span>
+
+                        <input type="password" placeholder="Password" required="">
+                        <span class="icon5"><i class="fa fa-unlock"></i></span>
+
+                        <input type="password" placeholder="Confirm Password" required="">
+                        <span class="icon6"><i class="fa fa-unlock"></i></span>
+
+                        <input type="submit" value="sign up">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end register popup -->
+    <!-- start tabs section -->
+    <section class="tabs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <ul class="list-unstyled tab-switch text-center">
+                        <li class="selected" data-class="tab-one">tab 1</li>
+                        <li data-class="tab-two">tab 2</li>
+                        <li data-class="tab-three">tab 3</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="tabs-content">
+                        <div class="tab-one">
+                            <h3 class="text-center-xs">Tab Number One</h3>
+                            <p class="text-center-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. <br> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod<br> bibendum laoreet</p>
+                            <button class="btn">Download</button>
+                        </div>
+                        <div class="tab-two">
+                            <h3 class="text-center-xs">Tab Number two</h3>
+                            <p class="text-center-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. <br> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod<br> bibendum laoreet</p>
+                            <button class="btn">Download</button>
+                        </div>
+                        <div class="tab-three">
+                            <h3 class="text-center-xs">Tab Number three</h3>
+                            <p class="text-center-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. <br> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod<br> bibendum laoreet</p>
+                            <button class="btn">Download</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img class="img-responsive center-block" src="~/img/home.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end tabs section -->
+    <!-- start sction sublist -->
+    <section class="sublist">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-responsive center-block sub-img" src="~/img/sublist.jpg">
+                </div>
+                <div class="col-md-6">
+                    <div class="list-info">
+                        <h3 class="head-border">Sub list Section</h3>
+                        <p class="sublist-dist">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                        <div class="list-icon">
+                            <i class="fa fa-cloud-download fa-lg pull-left"></i>
+                            <div class="text-info pull-left">
+                                <h4>Download</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="list-icon">
+                            <i class="fa fa-cloud-upload fa-lg pull-left"></i>
+                            <div class="text-info pull-left">
+                                <h4>upload</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end sction sublist -->
+    <!-- start standerd picture -->
+    <section class="standard-picture">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="list-info">
+                        <h3 class="head-border">standerd picture</h3>
+                        <p class="sublist-dist">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. <br> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive center-block sub-img" src="~/img/standarad.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end standerd picture -->
+    <!-- start Cities -->
+    <div class="city-div cities">
+        <div class="city-div container">
+            <div class="city-div row">
+                <div class="city-div col">
+                    <div class="city-div section_city_title">Find properties in these cities</div>
+                    <div class="city-div section_city_subtitle">Search your dream home</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="city-div cities_container d-flex flex-row flex-wrap align-items-start justify-content-between">
+
+            <!-- City -->
+            <div class="city-div city">
+                <img src="~/img/city_1.jpg" />
+                <div class="city-div city_overlay">
+                    <a href="#" class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="city-div city_title">Ibiza Town</div>
+                        <div class="city-div city_subtitle">Rentals from $450/month</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- City -->
+            <div class="city-div city">
+                <img src="~/img/city_2.jpg" />
+                <div class="city-div city_overlay">
+                    <a href="#" class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="city-div city_title">Ibiza Town</div>
+                        <div class="city-div city_subtitle">Rentals from $450/month</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- City -->
+            <div class="city-div city">
+                <img src="~/img/city_3.jpg" />
+                <div class="city-div city_overlay">
+                    <a href="#" class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="city-div city_title">Ibiza Town</div>
+                        <div class="city-div city_subtitle">Rentals from $450/month</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- City -->
+            <div class="city-div city">
+                <img src="~/img/city_4.jpg" />
+                <div class="city-div city_overlay">
+                    <a href="#" class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="city-div city_title">Ibiza Town</div>
+                        <div class="city-div city_subtitle">Rentals from $450/month</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- City -->
+            <div class="city-div city">
+                <img src="~/img/city_5.jpg" />
+                <div class="city-div city_overlay">
+                    <a href="#" class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="city-div city_title">Ibiza Town</div>
+                        <div class="city-div city_subtitle">Rentals from $450/month</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- City -->
+            <div class="city-div city">
+                <img src="~/img/city_6.jpg" />
+                <div class="city-div city_overlay">
+                    <a href="#" class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="city-div city_title">Ibiza Town</div>
+                        <div class="city-div city_subtitle">Rentals from $450/month</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- City -->
+            <div class="city-div city">
+                <img src="~/img/city_7.jpg" />
+                <div class="city-div city_overlay">
+                    <a href="#" class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="city-div city_title">Ibiza Town</div>
+                        <div class="city-div city_subtitle">Rentals from $450/month</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- City -->
+            <div class="city-div city">
+                <img src="~/img/city_8.jpg" />
+                <div class="city-div city_overlay">
+                    <a href="#" class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="city-div city_title">Ibiza Town</div>
+                        <div class="city-div city_subtitle">Rentals from $450/month</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end Cities -->
+    <!-- strat section pricing -->
+    <section class="price text-center">
+        <div class="container">
+            <h2 class="h1 price-heading head-border-center">pricing option</h2>
+            <p class="price-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="price-box basic">
+                        <h3 class="plan-head">Basic</h3>
+                        <div class="option-price">
+                            <span class="doller">
+                                <span class="usd">$</span>0
+                            </span>
+                            <span class="period">Free For Life</span>
+                        </div>
+                        <ul class="list-unstyled config">
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="price-box profesional">
+                        <h3 class="plan-head">Profesional</h3>
+                        <div class="option-price">
+                            <span class="doller">
+                                <span class="usd">$</span>0
+                            </span>
+                            <span class="period">Free For Life</span>
+                        </div>
+                        <p class="most-pop">Our Most Popular</p>
+                        <ul class="list-unstyled config">
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="price-box enterprice">
+                        <h3 class="plan-head">Enterprice</h3>
+                        <div class="option-price">
+                            <span class="doller">
+                                <span class="usd">$</span>0
+                            </span>
+                            <span class="period">Free For Life</span>
+                        </div>
+                        <ul class="list-unstyled config">
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                            <li>1 GB Of Space</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section pricing -->
+    <!-- start section testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="h1 head-border-center text-center">what our customer are saying</h2>
+            <p class="testimonials-desc text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="client-say">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra.</p>
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="~/img/avatar.jpg">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Jeremy H.</h4>
+                            <p>Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="client-say">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra.</p>
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="~/img/avatar.jpg">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Jeremy H.</h4>
+                            <p>Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="client-say">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra.</p>
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="~/img/avatar.jpg">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Jeremy H.</h4>
+                            <p>Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section testimonials -->
+    <!-- start section stylish -->
+    <section class="stylish">
+        <div class="overlay">
+            <div class="container">
+                <h2 class="stylish-head head-border-center uppercase text-center">stylish axure design</h2>
+                <p class="stylish-desc text-center">Use The Section You Need, remove the ones you don't create ahemeed faster than ever!</p>
+                <button class="stylish-btn">Download</button>
+            </div>
+        </div>
+    </section>
+    <!-- end section stylish -->
+    <!--- strat section contact us -->
+    <section class="contact-us">
+        <div class="container">
+            <h2 class="h1 head-border-center text-center">contact us</h2>
+            <p class="contact-desc text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="row">
+                <form>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="username" placeholder="Name" />
+                        <input class="form-control" type="email" name="email" placeholder="Email" />
+                        <input class="form-control" type="text" name="subject" placeholder="Subject" />
+                    </div>
+                    <div class="col-md-6">
+                        <textarea class="form-control" placeholder="Message"></textarea>
+                    </div>
+                </form>
+            </div>
+            <button class="contact-btn btn btn-warning">Send Messsge</button>
+        </div>
+    </section>
+    <!--- end section contact us -->
+    <!-- start footer -->
+    <div class="footer text-center">
+        <div class="container">
+            <i class="fa fa-facebook fa-2x fa-fw"></i>
+            <i class="fa fa-twitter fa-2x fa-fw"></i>
+            <i class="fa fa-google-plus fa-2x fa-fw"></i>
+            <i class="fa fa-pinterest fa-2x fa-fw"></i>
+            <i class="fa fa-instagram fa-2x fa-fw"></i>
+            <i class="fa fa-stumbleupon fa-2x fa-fw"></i>
+            <i class="fa fa-rss fa-2x fa-fw"></i>
+
+            <p>&copy; 2019 IA Team</p>
+        </div>
+    </div>
+    <!-- end footer -->
+
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/bootstrap3.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body>
+</html>

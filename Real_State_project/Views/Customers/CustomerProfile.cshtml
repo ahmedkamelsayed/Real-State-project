@@ -1,0 +1,178 @@
+﻿@*test page*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Real Estate Home</title>
+    <link rel="stylesheet" href="~/content/bootstrap.css">
+    <link rel="stylesheet" href="~/content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/content/customer_style.css">
+    <link rel="icon" href="~/img/house.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+
+</head>
+
+<body>
+
+
+    <!-- start header -->
+    <div class="header">
+        <div class="slider">
+            <div style=" color: #fff;">
+                welcome  @sessionPersiter.Username
+                <br />
+                <a href="@Url.Action("Logout","Account")">Logout</a>
+            </div>
+            <div class="intro text-center">
+                <h2>Customer and JE</h2>
+            </div>
+        </div>
+
+        <!-- start navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#axit-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand uppercase" href="#">Real<span> Estate</span> Home</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="axit-nav">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a onclick="Openlogin()">LOGIN</a></li>
+                        <li><a onclick="Openregister()">REGISTER</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!-- end navbar -->
+    </div>
+    <!-- end header -->
+    <!--- start admin profile -->
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-8 sidenav">
+                <div class="row">
+                    <div class="projects">
+                        <div class="col-sm-12">
+                            <div class="col-md-4 text-center animate-box">
+                                <div class="services color-1">
+                                    <span class="icon">
+                                        <i class="icon-bulb"></i>
+                                    </span>
+                                    <div class="desc">
+                                        <h3>Innovative Ideas</h3>
+                                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center animate-box">
+                                <div class="services color-2">
+                                    <span class="icon">
+                                        <i class="icon-data"></i>
+                                    </span>
+                                    <div class="desc">
+                                        <h3>Software</h3>
+                                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center animate-box">
+                                <div class="services color-3">
+                                    <span class="icon">
+                                        <i class="icon-phone3"></i>
+                                    </span>
+                                    <div class="desc">
+                                        <h3>Application</h3>
+                                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center animate-box">
+                                <div class="services color-4">
+                                    <span class="icon">
+                                        <i class="icon-layers2"></i>
+                                    </span>
+                                    <div class="desc">
+                                        <h3>Graphic Design</h3>
+                                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center animate-box">
+                                <div class="services color-5">
+                                    <span class="icon">
+                                        <i class="icon-data"></i>
+                                    </span>
+                                    <div class="desc">
+                                        <h3>Software</h3>
+                                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center animate-box">
+                                <div class="services color-6">
+                                    <span class="icon">
+                                        <i class="icon-phone3"></i>
+                                    </span>
+                                    <div class="desc">
+                                        <h3>Application</h3>
+                                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="profile-pic">
+                            <div class="col-sm-12">
+                                <div class="text-center">
+                                    <div class="img">
+                                        <img id="img" src="~/img/aboutt.jpg">
+                                    </div>
+                                    <h1><a href="index.html">Jackson Ford</a></h1>
+                                    <span class="position"><a href="#">UI/UX/Designer</a> in Philippines</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--- end admin profile -->
+    <!-- start footer -->
+    <div class="footer text-center">
+        <div class="container">
+            <i class="fa fa-facebook fa-2x fa-fw"></i>
+            <i class="fa fa-twitter fa-2x fa-fw"></i>
+            <i class="fa fa-google-plus fa-2x fa-fw"></i>
+            <i class="fa fa-pinterest fa-2x fa-fw"></i>
+            <i class="fa fa-instagram fa-2x fa-fw"></i>
+            <i class="fa fa-stumbleupon fa-2x fa-fw"></i>
+            <i class="fa fa-rss fa-2x fa-fw"></i>
+
+            <p>&copy; 2019 IA Team</p>
+        </div>
+    </div>
+    <!-- end footer -->
+
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
